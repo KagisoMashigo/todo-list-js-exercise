@@ -1,4 +1,3 @@
-// A new task will be created as incomplete
 function newTask(title, description) {
   const task = {
     title: title,
@@ -6,7 +5,7 @@ function newTask(title, description) {
     complete: false,
 
     logState: function() {
-      console.log(`${this.title} has${this.complete ? " " : " not "}been completed`);
+      console.log(`${this.title} has${this.complete ? " " : " not "}been completed\n`);
     },
 
     markCompleted: function() {
@@ -16,17 +15,16 @@ function newTask(title, description) {
   return task;
 }
 
-// DRIVER CODE BELOW
-
 const task1 = newTask("Clean Cat Litter", "Take all the 💩 out of the litter box");
 const task2 = newTask("Do Laundry", "😨");
-const tasks = [task1, task2];
 
 task1.logState(); // Clean Cat Litter has not been completed
+console.log("Cat returns looking furious\n")
 task1.markCompleted();
 task1.logState(); // Clean Cat Litter has been completed
 
 task2.logState(); // Do Laundry Litter has not been completed
+console.log("Partner returns looking furious\n")
 task2.markCompleted();
 task2.logState(); // Do Laundry Litter has been completed
 
